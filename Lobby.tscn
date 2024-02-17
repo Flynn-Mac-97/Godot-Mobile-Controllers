@@ -160,7 +160,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Joystick2" parent="Controls" instance=ExtResource("3_b8xqo")]
+[node name="Joystick" parent="Controls" instance=ExtResource("3_b8xqo")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -333,3 +333,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Connect/Join" to="Server" method="_on_join_button_pressed"]
 [connection signal="pressed" from="Connect/Create" to="Server" method="_on_create_button_pressed"]
+[connection signal="moving_joystick_position_as_int" from="Controls/Joystick" to="Server" method="send_joystick_position_to_server"]
