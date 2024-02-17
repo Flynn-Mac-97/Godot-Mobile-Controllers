@@ -1,0 +1,335 @@
+[gd_scene load_steps=10 format=3 uid="uid://deitslkf6ek4u"]
+
+[ext_resource type="Script" path="res://Server.gd" id="2_abj38"]
+[ext_resource type="PackedScene" uid="uid://d1posh0fkclqo" path="res://joystick_generic.tscn" id="3_b8xqo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs2n4"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnhko"]
+bg_color = Color(0, 0, 0, 0.32549)
+corner_radius_top_left = 300
+corner_radius_top_right = 300
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 300
+expand_margin_left = 120.0
+expand_margin_top = 120.0
+expand_margin_right = 120.0
+expand_margin_bottom = 120.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5edr"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 10
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8rdyx"]
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3671"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlxwx"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sefma"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[node name="Lobby" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Connect" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vs2n4")
+
+[node name="Join" type="Button" parent="Connect"]
+layout_mode = 1
+offset_right = 111.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 40
+text = "Join
+"
+
+[node name="Create" type="Button" parent="Connect"]
+layout_mode = 1
+offset_left = 128.0
+offset_right = 314.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 40
+text = "Create"
+
+[node name="PlayerList" type="VBoxContainer" parent="Connect"]
+layout_mode = 1
+offset_left = 1661.0
+offset_top = 9.0
+offset_right = 1903.0
+offset_bottom = 251.0
+
+[node name="IP Input" type="TextEdit" parent="Connect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -267.0
+offset_right = 267.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 46
+placeholder_text = "IP Address"
+
+[node name="Debug" type="RichTextLabel" parent="Connect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 94.0
+offset_right = 275.0
+offset_bottom = 244.0
+grow_horizontal = 2
+text = "Debug Information"
+
+[node name="Server" type="Node" parent="."]
+script = ExtResource("2_abj38")
+
+[node name="Controls" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Joystick2" parent="Controls" instance=ExtResource("3_b8xqo")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = -605.0
+offset_right = 158.0
+offset_bottom = -447.0
+grow_horizontal = 1
+scale = Vector2(3.875, 3.875)
+pivot_offset = Vector2(0, 0)
+
+[node name="DPad" type="Panel" parent="Controls"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -361.0
+offset_top = -364.0
+offset_right = 17.0
+offset_bottom = 22.0001
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.676347, 0.676347)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fnhko")
+
+[node name="A" type="Panel" parent="Controls/DPad"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -54.0
+offset_right = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+pivot_offset = Vector2(27, 27)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5edr")
+
+[node name="Button_Label" type="Label" parent="Controls/DPad/A"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+text = "A"
+label_settings = SubResource("LabelSettings_8rdyx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="B" type="Panel" parent="Controls/DPad"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -27.0
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+pivot_offset = Vector2(27, 27)
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3671")
+
+[node name="Button_Label" type="Label" parent="Controls/DPad/B"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+text = "B"
+label_settings = SubResource("LabelSettings_8rdyx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Panel" parent="Controls/DPad"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_right = 54.0
+offset_bottom = 27.0
+grow_vertical = 2
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+pivot_offset = Vector2(27, 27)
+theme_override_styles/panel = SubResource("StyleBoxFlat_nlxwx")
+
+[node name="Button_Label" type="Label" parent="Controls/DPad/X"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+text = "X"
+label_settings = SubResource("LabelSettings_8rdyx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Y" type="Panel" parent="Controls/DPad"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -27.0
+offset_right = 27.0
+offset_bottom = 54.0
+grow_horizontal = 2
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+pivot_offset = Vector2(27, 27)
+theme_override_styles/panel = SubResource("StyleBoxFlat_sefma")
+
+[node name="Button_Label" type="Label" parent="Controls/DPad/Y"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+text = "Y"
+label_settings = SubResource("LabelSettings_8rdyx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Connect/Join" to="Server" method="_on_join_button_pressed"]
+[connection signal="pressed" from="Connect/Create" to="Server" method="_on_create_button_pressed"]

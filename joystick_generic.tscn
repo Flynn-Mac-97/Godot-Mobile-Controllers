@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1posh0fkclqo"]
+
+[ext_resource type="Script" path="res://Joystick.gd" id="1_r5dr5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex3dx"]
+bg_color = Color(0, 0, 0, 0.164706)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+anti_aliasing_size = 3.648
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rewj2"]
+bg_color = Color(0.643137, 0.643137, 0.643137, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 11
+
+[node name="Joystick" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -185.275
+offset_top = -187.715
+offset_right = -27.2749
+offset_bottom = -29.7146
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(79, 79)
+mouse_default_cursor_shape = 13
+script = ExtResource("1_r5dr5")
+
+[node name="Backdrop" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -58.0
+offset_right = 58.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(58, 58)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ex3dx")
+
+[node name="Joystick" type="Panel" parent="Backdrop"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -37.0
+offset_right = 37.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37, 37)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rewj2")

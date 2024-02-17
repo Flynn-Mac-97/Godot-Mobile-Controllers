@@ -1,0 +1,248 @@
+[gd_scene load_steps=7 format=3 uid="uid://cslcgpte4uc74"]
+
+[ext_resource type="PackedScene" uid="uid://d1posh0fkclqo" path="res://joystick_generic.tscn" id="1_0rr6c"]
+[ext_resource type="Texture2D" uid="uid://b4ro8g8lmhtxf" path="res://xbox-one-s-wireless-controller.png" id="3_hbfwf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqngx"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 10
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h3o0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erbiu"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2h10"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0.00784314)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.133333)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[node name="PlayerVirtualController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Joystick" parent="." instance=ExtResource("1_0rr6c")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 28.0
+offset_top = -634.0
+offset_right = 186.0
+offset_bottom = -476.0
+grow_horizontal = 1
+scale = Vector2(3.875, 3.875)
+pivot_offset = Vector2(0, 0)
+
+[node name="A" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -538.0
+offset_top = -193.568
+offset_right = -484.0
+offset_bottom = -139.568
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+theme_override_styles/panel = SubResource("StyleBoxFlat_fqngx")
+
+[node name="Button_Label" type="Label" parent="A"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
+theme_override_font_sizes/font_size = 34
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="B" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -329.0
+offset_top = -399.568
+offset_right = -275.0
+offset_bottom = -345.568
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8h3o0")
+
+[node name="Button_Label" type="Label" parent="B"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
+theme_override_font_sizes/font_size = 34
+text = "B"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="X" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -747.0
+offset_top = -404.568
+offset_right = -693.0
+offset_bottom = -350.568
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+theme_override_styles/panel = SubResource("StyleBoxFlat_erbiu")
+
+[node name="Button_Label" type="Label" parent="X"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
+theme_override_font_sizes/font_size = 34
+text = "X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Y" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -534.0
+offset_top = -596.568
+offset_right = -480.0
+offset_bottom = -542.568
+grow_horizontal = 0
+grow_vertical = 0
+rotation = -0.76472
+scale = Vector2(3.89, 3.89)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v2h10")
+
+[node name="Button_Label" type="Label" parent="Y"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.6027
+offset_top = -10.8139
+offset_right = 26.6027
+offset_bottom = -10.8139
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.767329
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.12549)
+theme_override_font_sizes/font_size = 34
+text = "Y"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Xbox-one-s-wireless-controller" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(847, 819)
+scale = Vector2(2.35694, 2.35694)
+texture = ExtResource("3_hbfwf")
