@@ -3,6 +3,7 @@ extends Node
 # Autoload named Lobby
 @onready var join = $"../Connect/Join"
 @onready var create = $"../Connect/Create"
+@onready var disconnect = $"../Connect/Disconnect"
 
 @onready var player_list = $"../Connect/PlayerList"
 @onready var ip_input = $"../Connect/IP Input"
@@ -36,11 +37,14 @@ func _ready():
 	multiplayer.connection_failed.connect(_on_connected_fail)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 	debug.text = ""
-
+	
+	#if on mobile disable ability to create a game
+	create.disabled = (OS.get_name() == "Android" or OS.get_name() == "iOS")
 
 func join_game(address = ""):
 	if address.is_empty():
 		address = DEFAULT_SERVER_IP
+		#check if a server is up already on localhost, if not return error
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_client(address, PORT)
 	if error:
@@ -64,7 +68,6 @@ func create_game():
 				debug_log("Server IP: " + i)
 				break
 
-
 func remove_multiplayer_peer():
 	multiplayer.multiplayer_peer = null
 
@@ -74,7 +77,6 @@ func remove_multiplayer_peer():
 @rpc("call_local", "reliable")
 func load_game(game_scene_path):
 	get_tree().change_scene_to_file(game_scene_path)
-
 
 # Every peer will call this when they have loaded the game scene.
 @rpc("any_peer", "call_local", "reliable")
@@ -111,16 +113,13 @@ func _on_player_disconnected(id):
 	players.erase(id)
 	player_disconnected.emit(id)
 
-
 func _on_connected_ok():
 	var peer_id = multiplayer.get_unique_id()
 	players[peer_id] = player_info
 	player_connected.emit(peer_id, player_info)
 
-
 func _on_connected_fail():
 	multiplayer.multiplayer_peer = null
-
 
 func _on_server_disconnected():
 	multiplayer.multiplayer_peer = null
@@ -131,6 +130,9 @@ func _on_create_button_pressed():
 	var error = create_game()
 	if error == null:
 		debug_log("Game created successfully")
+		create.disabled = true
+		join.disabled = true
+		disconnect.disabled = false
 		# Transition to a "waiting for players" state in the UI
 	else:
 		debug_log("Failed to create game")
@@ -140,6 +142,8 @@ func _on_join_button_pressed():
 	var error = join_game(ip_input.text)
 	if error == null:
 		debug_log("Joined game successfully")
+		join.disabled = true
+		disconnect.disabled = false
 		# Update UI to show joining status or hide lobby UI
 	else:
 		debug_log("Failed to join game")
@@ -158,3 +162,20 @@ func debug_log(message: String):
 	debug.text += message + "\n"
 	# Optionally, you can still output to the console for remote debugging or when running in the editor
 	print(message)
+
+
+func _on_disconnect_pressed():
+	if multiplayer.is_server:
+		# If this instance is the server, we'll disconnect all clients and then stop the server.
+		_on_server_disconnected()
+		debug_log("Server disconnected.")
+	else:
+		# If this instance is a client, we'll just disconnect from the server.
+		multiplayer.multiplayer_peer.close_connection()
+
+
+	# Reset UI and any relevant game state here.
+	create.disabled = false  # Re-enable the create button if needed
+	join.disabled = false    # Re-enable the join button if needed
+	players.clear()          # Clear the list of players
+	disconnect.disabled = true

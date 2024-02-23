@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deitslkf6ek4u"]
+[gd_scene load_steps=17 format=3 uid="uid://deitslkf6ek4u"]
 
 [ext_resource type="FontFile" uid="uid://cg1aqb3a3mx2q" path="res://Roboto-Light.ttf" id="1_bkh2x"]
 [ext_resource type="Script" path="res://Server.gd" id="2_abj38"]
@@ -9,7 +9,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.101961, 0.0980392, 0.101961, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -23,7 +23,7 @@ shadow_color = Color(0, 0, 0, 0.113725)
 shadow_size = 8
 shadow_offset = Vector2(1.725, 2.72)
 
-[sub_resource type="Image" id="Image_k1y6q"]
+[sub_resource type="Image" id="Image_78nt5"]
 data = {
 "data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 97, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 97, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
 "format": "RGBA8",
@@ -33,7 +33,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_y3pcu"]
-image = SubResource("Image_k1y6q")
+image = SubResource("Image_78nt5")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aky03"]
 content_margin_left = 4.0
@@ -86,6 +86,17 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0ghq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="Theme" id="Theme_yijr0"]
 Button/fonts/font = ExtResource("1_bkh2x")
 Button/styles/normal = SubResource("StyleBoxFlat_q8t3k")
@@ -106,11 +117,15 @@ LineEdit/icons/clear = SubResource("ImageTexture_y3pcu")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_aky03")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_a4y34")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_y4nw4")
+RichTextLabel/colors/default_color = Color(0, 0.678431, 0.913725, 1)
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_g0ghq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs2n4"]
 bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="Theme" id="Theme_muc6x"]
+
+[sub_resource type="Theme" id="Theme_s6dyi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fnhko"]
 bg_color = Color(0, 0, 0, 0)
@@ -158,6 +173,16 @@ offset_bottom = 122.0
 theme_override_font_sizes/font_size = 40
 text = "Create"
 
+[node name="Disconnect" type="Button" parent="Connect"]
+layout_mode = 1
+offset_left = 201.0
+offset_top = 37.0
+offset_right = 387.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Disconnect"
+
 [node name="PlayerList" type="VBoxContainer" parent="Connect"]
 layout_mode = 1
 offset_left = 1661.0
@@ -203,7 +228,9 @@ offset_top = 138.0
 offset_right = -411.0
 offset_bottom = 288.0
 grow_horizontal = 2
+theme = SubResource("Theme_s6dyi")
 text = "Debug Information"
+scroll_following = true
 
 [node name="Server" type="Node" parent="."]
 script = ExtResource("2_abj38")
@@ -399,5 +426,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Connect/Create" to="Server" method="_on_create_button_pressed"]
+[connection signal="pressed" from="Connect/Disconnect" to="Server" method="_on_disconnect_pressed"]
 [connection signal="pressed" from="Connect/Join" to="Server" method="_on_join_button_pressed"]
 [connection signal="moving_joystick_position_as_int" from="Controls/Joystick" to="Server" method="send_joystick_position_to_server"]
